@@ -20,6 +20,9 @@
         </div>
       </a>
     <% } %>
+    <span class="image-counter">
+      <%= images.length %><% print ((images.length == 1) ? " kuva" : " kuvaa") %>
+    </span>
   </div>
   <% _.each(images, function(image) { %>
     <div class="photo">

@@ -132,6 +132,9 @@ div.image-list {
     padding-left: $photoPadding;
     padding-right: $photoPadding;
     @include clearfix;
+    span.image-counter {
+      color: $lightGreyColor;
+    }
     h2 {
       text-align: left;
       font-size: 2em;
