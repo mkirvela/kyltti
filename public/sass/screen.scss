@@ -137,6 +137,9 @@ div.image-list {
       font-size: 2em;
       margin-bottom: 30px;
     }
+    a:hover {
+      color: $linkColor;
+    }
     div.previous {
       float: left;
       &:before {

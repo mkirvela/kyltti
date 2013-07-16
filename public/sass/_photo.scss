@@ -28,9 +28,9 @@ div.photo {
     position: absolute;
 
     // Position according to padding
-    bottom: $photoPadding;
-    left: $photoPadding;
-    right: $photoPadding;
+    bottom: $photoPadding + 1px;
+    left: $photoPadding + 1px;
+    right: $photoPadding + 1px;
 
     // Styling of the caption text
     background-color: black;
