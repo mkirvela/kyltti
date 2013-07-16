@@ -59,9 +59,15 @@ header {
 
   @include clearfix;
 }
+@media (min-width: 1600px) {
+  header {
+    background-image: url('../images/hero_bg_1900.jpg');
+  }
+}
 
 @media (max-width: 767px) {
   header {
+    background-image: url('../images/hero_bg_mobile.jpg');
     padding-left: 0;
     padding-top: 30px;
     padding-bottom: 0;
