@@ -7,6 +7,14 @@ div.photo {
   @include box-sizing(border-box);
   padding: $photoPadding;
 
+  > div.placeholder {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    background-color: $darkGreyColor;
+    border: 1px solid $photoBorderColor;
+
   > img {
     // Remove all paddings/margins from image
     display: block;
@@ -14,23 +22,25 @@ div.photo {
     margin: 0;
 
     // Fluid width
-    width: 100%;
     height: auto;
-
-    // Styles of the actual photo
-    border: 1px solid $photoBorderColor;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // Styles of the actual photo "frame"
     @include box-shadow(3px 3px 4px black);
     @include box-sizing(border-box);
   }
+}
 
   > div.caption {
     overflow: hidden;
     position: absolute;
 
     // Position according to padding
-    bottom: $photoPadding + 1px;
+    bottom: $photoPadding - 1px;
     left: $photoPadding + 1px;
-    right: $photoPadding + 1px;
+    right: $photoPadding - 1px;
 
     // Styling of the caption text
     background-color: black;

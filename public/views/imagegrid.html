@@ -2,7 +2,9 @@
   <% _.each(groups, function(group) { %>
     <a href="<%= group.url %>">
       <div class="photo">
-        <img src="<%= group.imageurl %>">
+        <div class="placeholder">
+          <img src="<%= group.imageurl %>">
+        </div>
         <div class="caption"><p><%= group.name %></p></div>
       </div>
     </a>
