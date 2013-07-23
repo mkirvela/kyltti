@@ -30,7 +30,9 @@ function getNews(callback) {
     }
     var news = _.map(rows, function(news_item) {
       var news_date = new Date(news_item.date);
-      news_date = news_date.getDate() + '.' + (news_date.getMonth() + 1) + '.' + news_date.getFullYear();
+      var d = ("0" + news_date.getDate()).slice(-2);
+      var m = ("0" + (news_date.getMonth() + 1)).slice(-2);
+      news_date = d + '.' + m + '.' + news_date.getFullYear();
       return {
         title: news_item.title,
         message: news_item.message,
