@@ -5,6 +5,7 @@ header {
   background-position: center;
   color: $lightGreyColor;
   margin-bottom: 40px;
+  text-align: center;
   @include box-shadow(0px 4px 15px black);
 
   div.header-info {
@@ -21,9 +22,11 @@ header {
   div.header-image {
     @include inline-block(top);
     //width: 100% - $headerInfoWidth;
-    width: 100%;
+    margin: 0 auto;
     @include box-sizing(border-box);
     position: relative;
+    padding-left: 14.5%;
+    padding-right: 14.5%;
     padding-top: $headerPadding;
     padding-bottom: $headerPadding;
 
@@ -69,7 +72,6 @@ header {
   header {
     background-image: url('../images/hero_bg_mobile.jpg');
     padding-left: 0;
-    padding-top: 30px;
     padding-bottom: 0;
     height: 100%;
 
@@ -85,10 +87,8 @@ header {
     }
     div.header-image {
       width: 100%;
-      padding-left: 40px;
-      padding-right: 40px;
-      padding-bottom: $headerPadding / 2;
-      padding-top: $headerPadding / 2;
+      padding-bottom: $headerPadding / 3;
+      padding-top: $headerPadding / 3;
       div.reflection {
         display: none;
       }

@@ -1,7 +1,7 @@
 <ul>
   <% _.each(groups, function(group) { %>
     <li class="<% if (selected_group == group.id) print("selected"); %>">
-      <a href="<%= group.url %>"><%= group.name %></a>
+      <a href="<%= group.url %>#content"><%= group.name %></a>
     </li>
   <% }); %>
 </ul>
