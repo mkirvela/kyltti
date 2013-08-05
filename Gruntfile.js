@@ -34,6 +34,26 @@ module.exports = function(grunt) {
         ext: '.min.css'
       }
     },
+    "template-module": {
+      compile: {
+        options: {
+          module: true,
+          provider: 'underscore'
+        },
+        files: {
+          "public/js/templates/templates.js": ["public/views/*.html"]
+        }
+      }    
+    },
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: "public/js",
+          mainConfigFile: "public/js/main.js",
+          out: "public/js/test.js"
+        }
+      }
+    },
     watch: {
       files: ['public/sass/**/*'],
       tasks: ['compass']
@@ -45,6 +65,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-template-module');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
 
-  grunt.registerTask('default', ['clean','jshint','compass','cssmin','watch']);
+  grunt.registerTask('default', ['clean','jshint','compass','cssmin','requirejs','watch']);
 };

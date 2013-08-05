@@ -3,10 +3,11 @@
     <a href="<%= group.url %>#content">
       <div class="photo">
         <div class="placeholder">
-          <img src="<%= group.imageurl %>">
+          <img onload="fadeIn(this, true);" style="display:none;"src="<%= group.imageurl %>">
         </div>
         <div class="caption"><p><%= group.name %></p></div>
       </div>
     </a>
   <% }); %>
+</script>
 </div>

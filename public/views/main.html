@@ -21,6 +21,43 @@
       <script src="/html5shiv-3.6.2/html5shiv.js"></script>
       <script src="/html5shiv-3.6.2/html5shiv-printshiv.js"></script>
     <![endif]-->
+<script>
+function fade(type, ms, el, IE) {
+    var isIn = type === 'in',
+        opacity = isIn ? 0 : 1,
+        interval = 50,
+        gap = interval / ms;
+    console.log(el);
+    if(isIn) {
+         el.style.display = 'block';
+         el.style.opacity = opacity;
+         if(IE) {
+            el.style.filter = 'alpha(opacity=' + opacity + ')';
+            el.style.filter = 'progid:DXImageTransform.Microsoft.Alpha(Opacity=' + opacity + ')';
+        }
+    }
+    
+    function func() {
+        opacity = isIn ? opacity + gap : opacity - gap; 
+        el.style.opacity = opacity;
+        if(IE) {
+            el.style.filter = 'alpha(opacity=' + opacity * 100 + ')';
+            el.style.filter = 'progid:DXImageTransform.Microsoft.Alpha(Opacity=' + opacity * 100 + ')';
+        }
+        
+        if(opacity <= 0 || opacity >= 1) window.clearInterval(fading);
+        if(opacity <= 0) el.style.display = 'none';
+    }
+    
+    var fading = window.setInterval(func, interval);
+}
+function fadeIn(obj, parent) {
+  if (!parent) {
+    obj = obj.parentNode.parentNode;
+  }
+  fade('in', 750, obj, true);
+}
+</script>
   </head>
 
   <body>

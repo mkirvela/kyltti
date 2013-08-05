@@ -7,14 +7,14 @@
       <% } %>
     </h2>
     <% if (navigation.previous) { %>
-      <a href="<%= navigation.previous.url %>">
+      <a href="<%= navigation.previous.url %>#content">
         <div class="previous">
           <%= navigation.previous.name %>
         </div>
       </a>
     <% } %>
     <% if (navigation.next) { %>
-      <a href="<%= navigation.next.url %>">
+      <a href="<%= navigation.next.url %>#content">
         <div class="next">
           <%= navigation.next.name %>
         </div>
@@ -25,13 +25,15 @@
     </span>
   </div>
   <% _.each(images, function(image) { %>
+  <div style="display:none;">
     <div class="photo">
-      <img class="photo" src="<%= image.url %>">
+      <img class="photo" onload="javascript:fadeIn(this);" src="<%= image.url %>">
     </div>
     <div class="description">
       <% if (image.description) { %>
         &ldquo;<%= image.description %>&rdquo;
       <% } %>
+    </div>
+  </div>
   <% }); %>
-</div>
 </div>
